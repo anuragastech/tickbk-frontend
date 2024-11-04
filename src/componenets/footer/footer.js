@@ -1,12 +1,12 @@
 // src/components/Footer.js
 import React from 'react';
-import './Footer.css';
+import './footer.css';
 
 const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-content">
-                <p>&copy; 2023 Event Booking. All rights reserved.</p>
+                <p>&copy; 2024 Event Booking. All rights reserved.</p>
                 <div className="social-icons">
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                         <img src="../assets/facebook-icon.png" alt="Facebook" />
@@ -18,7 +18,7 @@ const Footer = () => {
                         <img src="../assets/twitter-icon.png" alt="Twitter" />
                     </a>
                 </div>
-                <p>Contact us: info@eventbooking.com | +123 456 7890</p>
+                <p>Contact us: info@eventbooking.com | +123 456 85648</p>
             </div>
         </footer>
     );

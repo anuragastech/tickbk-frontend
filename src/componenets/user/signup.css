@@ -1,0 +1,103 @@
+/* Overall page styling */
+.signup-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f2f6ff;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Card container */
+  .signup-card {
+    display: flex;
+    width: 900px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+  }
+  
+  /* Left image and welcome text */
+  .signup-image {
+    width: 50%;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .signup-image h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .signup-image p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  /* Right form container */
+  .signup-form-container {
+    width: 50%;
+    padding: 40px;
+  }
+  
+  .signup-form-container h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Input row for first and last name */
+  .input-row {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Input fields */
+  .signup-form-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .signup-form-container input:focus {
+    border-color: #2575fc;
+    outline: none;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: #ff4d4f;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Submit button */
+  .signup-form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2575fc;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .signup-form-container button:hover {
+    background-color: #6a11cb;
+  }
+  

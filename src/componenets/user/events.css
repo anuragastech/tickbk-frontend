@@ -1,0 +1,82 @@
+/* Container for the events page */
+.events-container {
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.events-container h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Events list styling */
+.events-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Styling each event card */
+.event-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image styling */
+.event-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Event title styling */
+.event-card h2 {
+    color: #007BFF;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Event description and date */
+.event-card p {
+    color: #555;
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
+/* Special style for the date line */
+.event-card p strong {
+    color: #333;
+}
+
+/* Button styling (optional if you want a call to action like "View Details") */
+.event-card button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.event-card button:hover {
+    background-color: #0056b3;
+}

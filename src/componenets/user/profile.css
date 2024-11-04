@@ -1,0 +1,83 @@
+/* profile.css */
+
+/* Body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #e9eff1; 
+    margin: 0;
+}
+
+/* Main profile container */
+.profile-container {
+    max-width: 900px; 
+    margin: 50px auto;
+    padding: 30px; 
+    background-color: #ffffff; 
+    border-radius: 12px; /* Smooth corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease; 
+}
+
+/* Hover effect for the profile container */
+.profile-container:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); 
+}
+
+/* Header styles */
+h1 {
+    text-align: center; 
+    color: #333; 
+    margin-bottom: 20px; 
+}
+
+/* Profile details styling */
+.profile-details {
+    margin-top: 20px; 
+    padding: 20px; 
+    border-radius: 10px; 
+    background-color: #f7f7f7; 
+    border: 1px solid #ddd;
+}
+
+/* Style for the strong tags inside profile details */
+.profile-details strong {
+    color: #555; 
+}
+
+/* Paragraph styling */
+p {
+    font-size: 16px;
+    color: #666; 
+    margin: 5px 0; 
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px; 
+    background-color: #0095f6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease; 
+    margin-top: 20px; 
+}
+
+/* Hover effect for buttons */
+.button:hover {
+    background-color: #007bbf; 
+}
+
+.error-message {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+}
+
+.loading-message {
+    color: #666; 
+    text-align: center;
+}
