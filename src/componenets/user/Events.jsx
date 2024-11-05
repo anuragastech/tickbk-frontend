@@ -54,7 +54,7 @@ const Events = () => {
         
         // If logged in, call the booking API with the event ID
         try {
-            await axios.post(`http://localhost:3005/bookEvent/${eventId}`, {}, {
+            await axios.post(`http://localhost:3005/bookEvents/${eventId}`, {}, {
                 withCredentials: true, // Include cookies in the request
             });
             alert("Booking successful!"); // Notify user of success
