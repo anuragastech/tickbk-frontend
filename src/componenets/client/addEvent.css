@@ -5,6 +5,53 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.page-wrapper {
+    width: 100%;
+    
+}
+
+header {
+    background-color: #ff7b67;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;   
+    align-items: center;      
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;        
+}
+
+/* Header title styling */
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    position: absolute;
+    left: 20px;  
+    color: #fdfdfd;
+    margin-top: 100px;             
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;  
+    flex-grow: 1;              
+}
+
+.nav a {
+    color: rgb(255, 255, 255);
+    margin-top: 100px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.nav a:hover {
+    color: #ffc371;
+}
+
 .background-wrapper {
     display: flex;
     justify-content: center;

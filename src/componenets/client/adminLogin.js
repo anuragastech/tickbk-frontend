@@ -65,7 +65,7 @@ const AdminLogin = () => {
                         </div>
                         <button type="submit">Login</button>
                         <p>
-                            If you are not a user! <a href="/signup">Sign Up</a>
+                            If you are not a user! <a href="/adminSignup">Sign Up</a>
                         </p>
                     </form>
                 </div>

@@ -46,80 +46,90 @@ const AddEventForm = () => {
   };
 
   return (
-    <div className="background-wrapper">
-      <div className="container">
-        <h2>Add New Event</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            placeholder="Title"
-            required
-          />
-          <textarea
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            placeholder="Description"
-            required
-          />
-          <input
-            type="text"
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-            placeholder="Location"
-            required
-          />
-          <input
-            type="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="time"
-            name="time"
-            value={formData.time}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="number"
-            name="capacity"
-            value={formData.capacity}
-            onChange={handleChange}
-            placeholder="Capacity"
-            required
-          />
-          <input
-            type="text"
-            name="tags"
-            value={formData.tags}
-            onChange={handleChange}
-            placeholder="Tags (comma separated)"
-            required
-          />
-          <input
-            type="number"
-            name="price"
-            value={formData.price}
-            onChange={handleChange}
-            placeholder="Price"
-            required
-          />
-          <input
-            type="file"
-            name="image"
-            onChange={handleImageChange}
-            accept="image/*"
-            required
-          />
-          <button type="submit">Create Event</button>
-        </form>
+    <div className="page-wrapper">
+      <header className="header">
+        <h1>Event Manager</h1>
+        <nav className="nav">
+          <a href="#home">Home</a>
+          <a href="#events">Events</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+      <div className="background-wrapper">
+        <div className="container">
+          <h2>Add New Event</h2>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="title"
+              value={formData.title}
+              onChange={handleChange}
+              placeholder="Title"
+              required
+            />
+            <textarea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              placeholder="Description"
+              required
+            />
+            <input
+              type="text"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              placeholder="Location"
+              required
+            />
+            <input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="time"
+              name="time"
+              value={formData.time}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="number"
+              name="capacity"
+              value={formData.capacity}
+              onChange={handleChange}
+              placeholder="Capacity"
+              required
+            />
+            <input
+              type="text"
+              name="tags"
+              value={formData.tags}
+              onChange={handleChange}
+              placeholder="Tags (comma separated)"
+              required
+            />
+            <input
+              type="number"
+              name="price"
+              value={formData.price}
+              onChange={handleChange}
+              placeholder="Price"
+              required
+            />
+            <input
+              type="file"
+              name="image"
+              onChange={handleImageChange}
+              accept="image/*"
+              required
+            />
+            <button type="submit">Create Event</button>
+          </form>
+        </div>
       </div>
     </div>
   );
