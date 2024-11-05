@@ -1,32 +1,44 @@
 /* addEvent.css */
 body {
-    background-color: #000000; /* Light grey background outside the container */
+    background-color: #f3f3f3 !important;
     margin: 0;
     font-family: Arial, sans-serif;
 }
+
 .background-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #fc5842; /* Light grey background outside container */
+    width: 100vw; /* Full viewport width */
+    background: linear-gradient(135deg, #ff7b67, #ffc371);
     padding: 20px;
+    overflow: hidden; /* Prevents any horizontal scroll */
+    box-sizing: border-box; /* Ensures padding doesn’t add extra width */
 }
+
+
 .container {
     background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     max-width: 500px;
-    padding: 20px;
+    padding: 25px;
     width: 100%;
     box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
 }
 
 .container h2 {
-    color: #333;
+    color: #444;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
+    text-align: center;
 }
 
 form {
@@ -42,13 +54,13 @@ input[type="time"],
 textarea,
 input[type="file"] {
     margin-bottom: 15px;
-    padding: 12px;
+    padding: 14px;
     font-size: 16px;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid #ddd;
     width: 100%;
     box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input[type="text"]:focus,
@@ -57,28 +69,30 @@ input[type="date"]:focus,
 input[type="time"]:focus,
 textarea:focus,
 input[type="file"]:focus {
-    border-color: #4a90e2;
+    border-color: #fc5842;
     outline: none;
+    box-shadow: 0 0 8px rgba(252, 88, 66, 0.3);
 }
 
 textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 100px;
 }
 
 button[type="submit"] {
     padding: 12px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #e57865;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: linear-gradient(135deg, #ff7b67, #ffc371);
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color:linear-gradient(135deg, #ff7b67, #ffc371);
+    transform: translateY(-3px);
 }
 
 .alert {

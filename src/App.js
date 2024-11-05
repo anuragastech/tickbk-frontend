@@ -8,7 +8,7 @@ import AddEvent from"./componenets/client/addEevnt"
 import About from"./componenets/user/about"
 import Profile from './componenets/user/profile';
 import Cart from './componenets/user/cart';
-
+import AdminLogin from './componenets/client/adminLogin';
 const App = () => {
     return (
         <Router>
@@ -22,6 +22,7 @@ const App = () => {
                     <Route path="/about" element={<About />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/cart" element={<Cart />} />
+                    <Route path="/adminLogin" element={<AdminLogin />} />
 
 
                     {/* Add additional routes here, like a dashboard route */}
