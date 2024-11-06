@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './profile.css';
-import Header from '../Header/header';
-import Footer from '../footer/footer';
+import Header from '../../Header/header';
+import Footer from '../../footer/footer';
 
 const Profile = () => {
     const [profile, setProfile] = useState(null);

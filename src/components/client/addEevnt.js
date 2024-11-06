@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./addEvent.css"; // Ensure your CSS styling is linked
+import "./addEvents.css"; // Ensure your CSS styling is linked
 
 const AddEventForm = () => {
   const [formData, setFormData] = useState({
@@ -77,7 +77,7 @@ const AddEventForm = () => {
 
   return (
     <div className="page-wrapper">
-      <header className="header">
+      <header className="header-new">
         <h1>Event Manager</h1>
         <nav className="nav">
           <a href="#home">Home</a>

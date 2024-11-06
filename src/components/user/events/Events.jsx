@@ -1,8 +1,7 @@
-// Events.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Header from '../Header/header';
-import Footer from '../footer/footer';
+import Header from '../../Header/header';
+import Footer from '../../footer/footer';
 import './events.css';
 
 // Modal Component for displaying event details
@@ -44,15 +43,12 @@ const Events = () => {
     }, []);
 
     const handleBookNow = async (eventId) => {
-        // Check for logged-in user by verifying the presence of a token in cookies
         const token = document.cookie.split('; ').find(row => row.startsWith('token='));
         if (!token) {
-            // Redirect to login if not logged in
             window.location.href = '/login';
             return;
         }
-        
-        // If logged in, call the booking API with the event ID
+
         try {
             await axios.post(`http://localhost:3005/bookEvents/${eventId}`, {}, {
                 withCredentials: true, // Include cookies in the request

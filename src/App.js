@@ -1,15 +1,16 @@
 // App.js
 import React from "react";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./componenets/user/Login";
-import Signup from "./componenets/user/signup";
-import Events from "./componenets/user/Events";
-import AddEvent from "./componenets/client/addEevnt";
-import About from "./componenets/user/about";
-import Profile from "./componenets/user/profile";
-import Cart from "./componenets/user/cart";
-import AdminLogin from "./componenets/client/adminLogin";
-import AdminSignup from "./componenets/client/adminSignup";
+import Login from "./components/user/login/Login";
+import Signup from "./components/user/signup/signup";
+import Events from "./components/user/events/Events";
+import AddEvent from "./components/client/addEevnt";
+import About from "./components/user/about/about";
+import Profile from "./components/user/profile/profile";
+import Cart from "./components/user/cart/cart";
+import AdminLogin from "./components/client/adminLogin";
+import AdminSignup from "./components/client/adminSignup";
 const App = () => {
   return (
     <Router>
