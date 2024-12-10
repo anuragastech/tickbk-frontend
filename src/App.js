@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Login from "./components/user/login/Login";
 import Signup from "./components/user/signup/signup";
 import Events from "./components/user/events/Events";
-// import AddEvent from "./components/client/addEvent";
+import AddEvent from "./components/client/addEevnt";
 import About from "./components/user/about/about";
 import Profile from "./components/user/profile/profile";
 import Cart from "./components/user/cart/cart";
@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/events" element={<Events />} />
-          {/* <Route path="/addEvent" element={<AddEvent />} /> */}
+          <Route path="/addEvent" element={<AddEvent />} />
           <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
