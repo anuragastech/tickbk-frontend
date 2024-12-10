@@ -1,6 +1,6 @@
+// src/components/Profile/Profile.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './profile.css';
 import Header from '../../Header/header';
 import Footer from '../../footer/footer';
 
@@ -27,26 +27,26 @@ const Profile = () => {
         fetchProfile();
     }, []);
 
-    if (loading) return <p>Loading profile...</p>;
-    if (error) return <p>{error}</p>;
+    if (loading) return <p className="text-center text-gray-500">Loading profile...</p>;
+    if (error) return <p className="text-center text-red-500">{error}</p>;
 
     return (
         <div>
-        <Header/>
-        <div className="profile-container">
-            <h1>Profile</h1>
-            {profile ? (
-                <div className="profile-details">
-                    <p><strong>Name:</strong> {profile.name}</p>
-                    <p><strong>Email:</strong> {profile.email}</p>
-                    <p><strong>Username:</strong> {profile.username}</p>
-                    <p><strong>Joined:</strong> {new Date(profile.createdAt).toLocaleDateString()}</p>
-                </div>
-            ) : (
-                <p>No profile data available.</p>
-            )}
-        </div>
-        <Footer/>
+            <Header />
+            <div className="max-w-3xl mx-auto mt-12 p-8 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <h1 className="text-center text-2xl font-semibold text-gray-800 mb-6">Profile</h1>
+                {profile ? (
+                    <div className="bg-gray-100 p-6 rounded-lg border border-gray-300">
+                        <p className="text-lg text-gray-700"><strong className="text-gray-600">Name:</strong> {profile.name}</p>
+                        <p className="text-lg text-gray-700"><strong className="text-gray-600">Email:</strong> {profile.email}</p>
+                        <p className="text-lg text-gray-700"><strong className="text-gray-600">Username:</strong> {profile.username}</p>
+                        <p className="text-lg text-gray-700"><strong className="text-gray-600">Joined:</strong> {new Date(profile.createdAt).toLocaleDateString()}</p>
+                    </div>
+                ) : (
+                    <p className="text-center text-gray-500">No profile data available.</p>
+                )}
+            </div>
+            <Footer />
         </div>
     );
 };
