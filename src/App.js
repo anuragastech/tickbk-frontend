@@ -8,6 +8,7 @@ import Profile from "./components/user/profile/profile";
 import Cart from "./components/user/cart/cart";
 import AdminLogin from "./components/client/adminLogin";
 import AdminSignup from "./components/client/adminSignup";
+import Home from "./components/Home/homepage"
 
 const App = () => {
   return (
@@ -25,6 +26,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/" element={<Home />} />
+
         </Routes>
       </div>
     </Router>
