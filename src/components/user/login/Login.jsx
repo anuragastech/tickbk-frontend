@@ -13,7 +13,7 @@ const Login = () => {
         setError(null);
 
         try {
-            const response = await axios.post('http://localhost:3005/login', { emailId, password }, { withCredentials: true });
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`, { emailId, password }, { withCredentials: true });
             console.log('Login successful:', response.data);
 
             // No need to save the token in local storage

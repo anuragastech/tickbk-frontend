@@ -60,7 +60,7 @@ const Header = () => {
             {/* Right Section: Sign In / Get Started Buttons for Desktop */}
             <div className="hidden lg:flex items-center ml-auto space-x-4">
                 <Link 
-                    to="/signin" 
+                    to="/login" 
                     className="text-green-600 font-Zoho_Puvi_Regular,sans-serif text-sm py-2 px-4 rounded-lg transition-transform transform hover:scale-105"
                 >
                     SIGN IN
@@ -156,7 +156,7 @@ const Header = () => {
                     {/* Sign In and Get Started Buttons in the Mobile Menu */}
                     <div className="flex flex-col items-center space-y-4 mt-8">
                         <Link 
-                            to="/signin" 
+                            to="/login" 
                             className="text-green-600 font-Zoho_Puvi_Regular,sans-serif text-sm py-2 px-4 rounded-lg transition-transform transform hover:scale-105"
                             onClick={toggleMenu}
                         >

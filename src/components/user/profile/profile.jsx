@@ -12,8 +12,8 @@ const Profile = () => {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const response = await axios.get('http://localhost:3005/profile/user', {
-                    withCredentials: true 
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/profile/user`, {
+                    withCredentials: true, // Ensure cookies are sent
                 });
                 setProfile(response.data.user);
                 setLoading(false);
