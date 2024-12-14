@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Header from '../../Header/header';
+
 
 const Login = () => {
     const [emailId, setEmailId] = useState('');
@@ -30,10 +32,11 @@ const Login = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100 font-poppins">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-blackish-blue to-green-600 font-poppins">
+        <Header/>
             <div className="flex w-full max-w-4xl shadow-lg rounded-lg overflow-hidden bg-white">
                 {/* Left Section */}
-                <div className="w-1/2 bg-gradient-to-br from-indigo-500 to-blue-600 text-white flex flex-col justify-center items-center p-10">
+                <div className="w-1/2 bg-gradient-to-br from-indigo-500 to-blackish-blue text-white flex flex-col justify-center items-center p-10">
                     <h2 className="text-3xl font-bold mb-4">Welcome Back!</h2>
                     <p className="text-lg text-center">Please log in to continue.</p>
                 </div>
@@ -72,7 +75,7 @@ const Login = () => {
                         </div>
                         <button
                             type="submit"
-                            className="w-full py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-indigo-500 transition duration-300"
+                            className="w-full py-3 bg-gradient-to-br from-indigo-500 to-green-400 text-white text-lg font-semibold rounded-lg hover:bg-indigo-500 transition duration-300"
                         >
                             Login
                         </button>

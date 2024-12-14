@@ -5,7 +5,7 @@ import Events from "./components/user/events/Events";
 import AddEvent from "./components/client/addEevnt";
 import About from "./components/user/about/about";
 import Profile from "./components/user/profile/profile";
-import Cart from "./components/user/cart/cart";
+import Contact from "./components/user/Contact/Contact";
 import AdminLogin from "./components/client/adminLogin";
 import AdminSignup from "./components/client/adminSignup";
 import Home from "./components/Home/homepage"
@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/addEvent" element={<AddEvent />} />
           <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/" element={<Home />} />
 
         </Routes>

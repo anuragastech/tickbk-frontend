@@ -23,7 +23,7 @@ const AddEventForm = () => {
   const fetchEvents = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get("http://localhost:3005/events");
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/events`);
       setEvents(response.data.events);
     } catch (error) {
       console.error("Error fetching events:", error);
@@ -43,7 +43,7 @@ const AddEventForm = () => {
     }
 
     try {
-      await axios.post("http://localhost:3005/addEvents", data, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/addEvents`, data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("Event created successfully!");
@@ -57,7 +57,7 @@ const AddEventForm = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3005/deleteEvent/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/deleteEvent/${id}`);
       alert("Event deleted successfully!");
       fetchEvents();
     } catch (error) {

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import Header from '../../Header/header';
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
@@ -11,6 +13,8 @@ const Signup = () => {
   const [gender, setGender] = useState("");
   const [address, setAddress] = useState("");
   const [error, setError] = useState(null);
+  
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -32,6 +36,7 @@ const Signup = () => {
         address,
       });
       console.log("Signup successful:", response.data);
+      navigate("/login"); // Redirect to the login page
     } catch (err) {
       setError(err.response?.data?.message || "Signup failed. Please check your details.");
     }
@@ -39,6 +44,7 @@ const Signup = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 font-poppins">
+      <Header />
       <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-xl overflow-hidden max-w-4xl w-full">
         {/* Left Section */}
         <div className="hidden md:flex flex-col justify-center items-center bg-gradient-to-br from-purple-700 to-indigo-600 text-white p-8 w-1/2">

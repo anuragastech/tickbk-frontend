@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Header from "../Header/header";
 import Footer from "../footer/footer";
+import { useNavigate } from 'react-router-dom';
+
 
 const HomePage = () => {
   const [time, setTime] = useState(0);
   const [scrolling, setScrolling] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let startTime;
@@ -58,10 +61,10 @@ const HomePage = () => {
       <p className="text-lg text-white/90 leading-relaxed">
         Whether it's concerts, workshops, conferences, or local meetups, we help you find events that match your interests. Book tickets effortlessly and stay updated with the latest programs.
       </p>
-      <button className="mt-8 mr-4 px-6 py-3 bg-red-500 text-white font-medium text-lg shadow-md hover:bg-indigo-100 hover:text-black transition duration-300">
+      <button onClick={() => navigate('/signup')} className="mt-8 mr-4 px-6 py-3 bg-red-500 text-white font-medium text-lg shadow-md hover:bg-indigo-100 hover:text-black transition duration-300">
         SIGN UP NOW
       </button>
-      <button className="mt-8 px-6 py-3 bg-transparent border-2 border-blue-500 text-indigo-600 font-medium text-lg rounded-sm shadow-md hover:bg-indigo-100 transition duration-300">
+      <button onClick={()=>navigate('/events')} className="mt-8 px-6 py-3 bg-transparent border-2 border-blue-500 text-indigo-600 font-medium text-lg rounded-sm shadow-md hover:bg-indigo-100 transition duration-300">
         Explore Events
       </button>
     </div>
@@ -69,9 +72,9 @@ const HomePage = () => {
     {/* Right Content */}
     <div className="relative">
       <img
-        src="https://via.placeholder.com/400x300"
+        src="https://res.cloudinary.com/dd6qdgpfr/image/upload/v1734180960/rb_120_zp1pwh.png"
         alt="Event illustration"
-        className="rounded-lg shadow-lg w-full h-auto"
+        className="rounded-xl shadow-lg w-full h-auto"
       />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-40 rounded-lg"></div>
     </div>
@@ -102,14 +105,30 @@ const HomePage = () => {
 
 {/* Do More in Less Time Section */}
 <div className="flex justify-center bg-white">
-  <div className="flex bg-gradient-to-br from-black to-blackish-blue w-full md:w-11/12 rounded-xl h-auto md:h-screen justify-start">
-    <div className="mt-16 sm:mt-20 ml-6 sm:ml-12 md:ml-24">
-      <h5 className="text-green-500 text-lg sm:text-xl">DO MORE IN LESS TIME</h5>
-      <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold">End-to-end</h1>
-      <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold">event planning</h1>
+  <div className="flex flex-col md:flex-row bg-gradient-to-br from-black to-blackish-blue w-full md:w-11/12 rounded-xl h-auto md:h-screen justify-center md:justify-start relative">
+    {/* Left Content */}
+    <div className="mt-12 sm:mt-16 ml-4 sm:ml-8 md:ml-12 lg:ml-24 text-center md:text-left">
+      <h5 className="text-green-500 text-base sm:text-lg md:text-xl">DO MORE IN LESS TIME</h5>
+      <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+        End-to-end
+      </h1>
+      <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+        event planning
+      </h1>
+      
+    </div>
+
+    {/* Center Image */}
+    <div className="flex items-center justify-center w-full md:w-1/2 mt-8 md:mt-0">
+      <img
+        src="https://res.cloudinary.com/dd6qdgpfr/image/upload/v1734183764/rb_2148560144_gkaumr.png"
+        alt="Event Planning"
+        className="w-5/6 sm:w-4/5 md:w-11/12 lg:w-full max-w-md md:max-w-lg lg:max-w-2xl object-contain"
+      />
     </div>
   </div>
 </div>
+
 
       {/* --------------------------------------   */}
       <div className="h-auto bg-white">
@@ -137,7 +156,7 @@ const HomePage = () => {
       {/* Right Content */}
       <div className="relative">
         <img
-          src="https://via.placeholder.com/400x300"
+          src="https://res.cloudinary.com/dd6qdgpfr/image/upload/v1734180666/rb_23_bh54xv.png"
           alt="Event illustration"
           className="rounded-lg shadow-lg w-full sm:w-11/12"
         />
@@ -152,7 +171,7 @@ const HomePage = () => {
       {/* Left Content */}
       <div className="relative">
         <img
-          src="https://via.placeholder.com/400x300"
+          src="https://res.cloudinary.com/dd6qdgpfr/image/upload/v1734180644/cancelled-events-announcement-concept_lf1jlg.png"
           alt="Event illustration"
           className="rounded-lg shadow-lg w-full sm:w-11/12"
         />
@@ -199,8 +218,8 @@ const HomePage = () => {
         <span>Time Up: </span>
         <span className="font-bold">{time}s</span>
       </div>
-      <button className="mt-8 px-6 sm:px-8 py-3 bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold text-lg rounded-lg shadow-md hover:opacity-90 transition duration-300">
-        Sign In
+      <button onClick={() => navigate('/login')} className="mt-8 px-6 sm:px-8 py-3 bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold text-lg rounded-lg shadow-md hover:opacity-90 transition duration-300">
+         Sign In
       </button>
     </div>
 
@@ -301,7 +320,7 @@ const HomePage = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="mt-4 px-6 py-3 w-full sm:w-11/12 bg-blue-600 text-white font-medium text-lg rounded-sm shadow-md hover:bg-blue-700 transition duration-300"
+            className="mt-4 px-6 py-3 w-full sm:w-11/12 bg-gradient-to-br from-blue-gradient via-green-950 to-green-gradient rounded-xl text-white font-medium text-lg shadow-md hover:bg-blue-700 transition duration-300"
           >
             Submit
           </button>
@@ -320,7 +339,7 @@ const HomePage = () => {
   <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4">
     smarter, better?
   </h1>
-  <button className="mt-4 px-6 py-3 bg-red-500 text-white font-medium text-lg rounded-sm shadow-md hover:bg-red-600 transition duration-300">
+  <button onClick={() => navigate('/events')} className="mt-4 px-6 py-3 bg-red-500 text-white font-medium text-lg rounded-sm shadow-md hover:bg-red-600 transition duration-300">
     Get Started Now
   </button>
 </div>

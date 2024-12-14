@@ -1,11 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+    };
+
+    // Check if the token exists in cookies when the component mounts
+    useEffect(() => {
+        const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+        setIsAuthenticated(!!token); // Set authentication state based on token presence
+    }, []);
+
+    const handleLogout = () => {
+        // Clear the token from cookies and set authentication state to false
+        document.cookie = 'token=; max-age=0; path=/';
+        setIsAuthenticated(false);
     };
 
     return (
@@ -15,7 +28,7 @@ const Header = () => {
                 {/* Logo Section */}
                 <div className="flex items-center space-x-4">
                     <img 
-                        src="https://via.placeholder.com/40" 
+                        src="https://res.cloudinary.com/dd6qdgpfr/image/upload/v1734185879/Pngtree_infinity_logo_and_symbol_template_3626130_jfuhm1.png" 
                         alt="TickBook Logo" 
                         className="w-10 h-10 object-contain"
                     />
@@ -43,34 +56,47 @@ const Header = () => {
                         About Us
                     </Link>
                     <Link 
-                        to="/cart" 
+                        to="/contact" 
                         className="text-black font-Zoho_Puvi_Regular,sans-serif text-base py-2 px-2 rounded-lg transition-colors duration-300 hover:bg-gray-200"
                     >
-                        Cart
+                        Contact
                     </Link>
-                    <Link 
-                        to="/profile" 
-                        className="text-black font-Zoho_Puvi_Regular,sans-serif text-base py-2 px-2 rounded-lg transition-colors duration-300 hover:bg-gray-200"
-                    >
-                        Profile
-                    </Link>
+                    {isAuthenticated && (
+                        <Link 
+                            to="/profile" 
+                            className="text-black font-Zoho_Puvi_Regular,sans-serif text-base py-2 px-2 rounded-lg transition-colors duration-300 hover:bg-gray-200"
+                        >
+                            Profile
+                        </Link>
+                    )}
                 </nav>
             </div>
 
             {/* Right Section: Sign In / Get Started Buttons for Desktop */}
             <div className="hidden lg:flex items-center ml-auto space-x-4">
-                <Link 
-                    to="/login" 
-                    className="text-green-600 font-Zoho_Puvi_Regular,sans-serif text-sm py-2 px-4 rounded-lg transition-transform transform hover:scale-105"
-                >
-                    SIGN IN
-                </Link>
-                <Link 
-                    to="/signup" 
-                    className="text-white bg-green-500 font-Zoho_Puvi_Regular,sans-serif text-sm py-2 px-4 transition-transform transform hover:scale-105"
-                >
-                    GET STARTED
-                </Link>
+                {!isAuthenticated ? (
+                    <>
+                        <Link 
+                            to="/login" 
+                            className="text-green-600 font-Zoho_Puvi_Regular,sans-serif text-sm py-2 px-4 rounded-lg transition-transform transform hover:scale-105"
+                        >
+                            SIGN IN
+                        </Link>
+                        <Link 
+                            to="/signup" 
+                            className="text-white bg-green-500 font-Zoho_Puvi_Regular,sans-serif text-sm py-2 px-4 transition-transform transform hover:scale-105"
+                        >
+                            GET STARTED
+                        </Link>
+                    </>
+                ) : (
+                    <button
+                        onClick={handleLogout}
+                        className="text-red-600 font-Zoho_Puvi_Regular,sans-serif text-sm py-2 px-4 rounded-lg transition-transform transform hover:scale-105"
+                    >
+                        LOG OUT
+                    </button>
+                )}
             </div>
 
             {/* Mobile Navigation Toggle Button */}
@@ -139,37 +165,53 @@ const Header = () => {
                         About Us
                     </Link>
                     <Link 
-                        to="/cart" 
+                        to="/contact" 
                         className="text-black font-Zoho_Puvi_Regular,sans-serif text-base py-2 px-4 w-full text-center transition-colors duration-300 hover:bg-gray-200"
                         onClick={toggleMenu}
                     >
-                        Cart
+                        Contact
                     </Link>
-                    <Link 
-                        to="/profile" 
-                        className="text-black font-Zoho_Puvi_Regular,sans-serif text-base py-2 px-4 w-full text-center transition-colors duration-300 hover:bg-gray-200"
-                        onClick={toggleMenu}
-                    >
-                        Profile
-                    </Link>
+                    {isAuthenticated && (
+                        <Link 
+                            to="/profile" 
+                            className="text-black font-Zoho_Puvi_Regular,sans-serif text-base py-2 px-4 w-full text-center transition-colors duration-300 hover:bg-gray-200"
+                            onClick={toggleMenu}
+                        >
+                            Profile
+                        </Link>
+                    )}
 
                     {/* Sign In and Get Started Buttons in the Mobile Menu */}
-                    <div className="flex flex-col items-center space-y-4 mt-8">
-                        <Link 
-                            to="/login" 
-                            className="text-green-600 font-Zoho_Puvi_Regular,sans-serif text-sm py-2 px-4 rounded-lg transition-transform transform hover:scale-105"
-                            onClick={toggleMenu}
-                        >
-                            SIGN IN
-                        </Link>
-                        <Link 
-                            to="/signup" 
-                            className="text-white bg-green-500 font-Zoho_Puvi_Regular,sans-serif text-sm py-2 px-4 transition-transform transform hover:scale-105"
-                            onClick={toggleMenu}
-                        >
-                            GET STARTED
-                        </Link>
-                    </div>
+                    {!isAuthenticated ? (
+                        <div className="flex flex-col items-center space-y-4 mt-8">
+                            <Link 
+                                to="/login" 
+                                className="text-green-600 font-Zoho_Puvi_Regular,sans-serif text-sm py-2 px-4 rounded-lg transition-transform transform hover:scale-105"
+                                onClick={toggleMenu}
+                            >
+                                SIGN IN
+                            </Link>
+                            <Link 
+                                to="/signup" 
+                                className="text-white bg-green-500 font-Zoho_Puvi_Regular,sans-serif text-sm py-2 px-4 transition-transform transform hover:scale-105"
+                                onClick={toggleMenu}
+                            >
+                                GET STARTED
+                            </Link>
+                        </div>
+                    ) : (
+                        <div className="flex flex-col items-center space-y-4 mt-8">
+                            <button 
+                                onClick={() => {
+                                    handleLogout();
+                                    toggleMenu();
+                                }} 
+                                className="text-red-600 font-Zoho_Puvi_Regular,sans-serif text-sm py-2 px-4 rounded-lg transition-transform transform hover:scale-105"
+                            >
+                                LOG OUT
+                            </button>
+                        </div>
+                    )}
                 </nav>
             </div>
         </header>

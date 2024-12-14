@@ -6,7 +6,7 @@ const About = () => {
     return (
         <div className="bg-gray-100 min-h-screen flex flex-col">
             <Header />
-            <div className="about-container max-w-7xl mx-auto px-8 py-10 text-gray-800 font-sans">
+            <div className="about-container max-w-7xl mx-auto px-8 py-10 text-gray-800 font-sans mt-16">
                 {/* Hero Section */}
                 <div className="about-hero text-center bg-gradient-to-r from-teal-600 via-teal-500 to-teal-400 text-white p-12 rounded-lg shadow-lg mb-10">
                     <h1 className="text-5xl font-extrabold mb-4 tracking-tight">About Evently</h1>
