@@ -74,9 +74,9 @@ const HomePage = () => {
       <img
         src="https://res.cloudinary.com/dd6qdgpfr/image/upload/v1734180960/rb_120_zp1pwh.png"
         alt="Event illustration"
-        className="rounded-xl shadow-lg w-full h-auto"
+        className="rounded-xl shadow-sm w-full h-auto"
       />
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-40 rounded-lg"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-5 rounded-lg"></div>
     </div>
   </div>
 </main>
@@ -158,9 +158,9 @@ const HomePage = () => {
         <img
           src="https://res.cloudinary.com/dd6qdgpfr/image/upload/v1734180666/rb_23_bh54xv.png"
           alt="Event illustration"
-          className="rounded-lg shadow-lg w-full sm:w-11/12"
+          className="rounded-lg shadow-sm w-full sm:w-11/12"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-40 rounded-lg"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-5 rounded-lg"></div>
       </div>
     </div>
   </main>
@@ -173,9 +173,9 @@ const HomePage = () => {
         <img
           src="https://res.cloudinary.com/dd6qdgpfr/image/upload/v1734180644/cancelled-events-announcement-concept_lf1jlg.png"
           alt="Event illustration"
-          className="rounded-lg shadow-lg w-full sm:w-11/12"
+          className="rounded-sm shadow-sm w-full sm:w-11/12"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-40 rounded-lg"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-10 rounded-lg"></div>
       </div>
 
       {/* Right Content */}

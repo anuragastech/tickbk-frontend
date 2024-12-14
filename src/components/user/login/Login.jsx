@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../Header/header';
-
+import Footer from '../../footer/footer';
 
 const Login = () => {
     const [emailId, setEmailId] = useState('');
@@ -15,10 +15,13 @@ const Login = () => {
         setError(null);
 
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`, { emailId, password }, { withCredentials: true });
+            const response = await axios.post(
+                `${process.env.REACT_APP_API_URL}/login`,
+                { emailId, password },
+                { withCredentials: true }
+            );
             console.log('Login successful:', response.data);
 
-            // No need to save the token in local storage
             navigate('/events');
         } catch (err) {
             if (err.response) {
@@ -32,17 +35,18 @@ const Login = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-blackish-blue to-green-600 font-poppins">
-        <Header/>
-            <div className="flex w-full max-w-4xl shadow-lg rounded-lg overflow-hidden bg-white">
+        <div>
+        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gradient-to-br from-black via-blackish-blue to-green-600 font-poppins">
+            <Header />
+            <div className="flex flex-col md:flex-row w-full max-w-4xl shadow-lg rounded-lg overflow-hidden bg-white">
                 {/* Left Section */}
-                <div className="w-1/2 bg-gradient-to-br from-indigo-500 to-blackish-blue text-white flex flex-col justify-center items-center p-10">
-                    <h2 className="text-3xl font-bold mb-4">Welcome Back!</h2>
-                    <p className="text-lg text-center">Please log in to continue.</p>
+                <div className="hidden md:flex md:w-1/2 bg-gradient-to-br from-indigo-500 to-blackish-blue text-white flex-col justify-center items-center p-10">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">Welcome Back!</h2>
+                    <p className="text-sm md:text-lg text-center">Please log in to continue.</p>
                 </div>
                 {/* Right Section */}
-                <div className="w-1/2 p-8">
-                    <h1 className="text-2xl font-semibold text-gray-800 text-center mb-6">Login</h1>
+                <div className="w-full md:w-1/2 p-6 sm:p-8">
+                    <h1 className="text-xl md:text-2xl font-semibold text-gray-800 text-center mb-6">Login</h1>
                     {error && <p className="text-red-500 text-center mb-4">{error}</p>}
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
@@ -88,6 +92,9 @@ const Login = () => {
                     </form>
                 </div>
             </div>
+            </div>
+            <Footer/>
+
         </div>
     );
 };

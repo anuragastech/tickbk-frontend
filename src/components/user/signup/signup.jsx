@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Header from '../../Header/header';
+import Footer from "../../footer/footer";
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
@@ -43,7 +44,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 font-poppins">
+    <div>
+    <div className="flex items-center mt-11 justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 font-poppins">
       <Header />
       <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-xl overflow-hidden max-w-4xl w-full">
         {/* Left Section */}
@@ -123,7 +125,11 @@ const Signup = () => {
           </form>
         </div>
       </div>
+      </div>
+
+      <Footer/>
     </div>
+
   );
 };
 
