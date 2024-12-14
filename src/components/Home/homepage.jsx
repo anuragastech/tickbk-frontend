@@ -72,11 +72,11 @@ const HomePage = () => {
     {/* Right Content */}
     <div className="relative">
       <img
-        src="https://res.cloudinary.com/dd6qdgpfr/image/upload/v1734180960/rb_120_zp1pwh.png"
+        src="https://res.cloudinary.com/dd6qdgpfr/image/upload/v1734198914/rb_61944_taorh0.png"
         alt="Event illustration"
         className="rounded-xl shadow-sm w-full h-auto"
       />
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-5 rounded-lg"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-20 rounded-lg"></div>
     </div>
   </div>
 </main>
