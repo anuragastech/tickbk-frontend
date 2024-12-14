@@ -45,7 +45,7 @@ const Signup = () => {
 
   return (
     <div>
-    <div className="flex items-center mt-11 justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 font-poppins">
+    <div className="flex items-center mt-2 justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 font-poppins">
       <Header />
       <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-xl overflow-hidden max-w-4xl w-full">
         {/* Left Section */}

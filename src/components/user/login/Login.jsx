@@ -36,7 +36,7 @@ const Login = () => {
 
     return (
         <div>
-        <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gradient-to-br from-black via-blackish-blue to-green-600 font-poppins">
+        <div className="flex  flex-col md:flex-row items-center justify-center min-h-screen bg-gradient-to-br from-black via-blackish-blue to-green-600 font-poppins">
             <Header />
             <div className="flex flex-col md:flex-row w-full max-w-4xl shadow-lg rounded-lg overflow-hidden bg-white">
                 {/* Left Section */}
